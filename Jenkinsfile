@@ -1,5 +1,6 @@
 pipeline {
-    agent any  
+    agent { dockerfile true }
+
     
     environment {
       DOCKER_CERT_PATH = credentials('docker_id')
