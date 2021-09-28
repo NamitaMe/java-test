@@ -4,9 +4,10 @@ pipeline {
         skipStagesAfterUnstable()
     }*/
     tools { 
-        echo ' testing success.******* '
+        
         maven 'maven.3.8.2' 
         jdk 'jdk.9.0.4' 
+        echo ' testing success.******* '
     }
     
     environment {
