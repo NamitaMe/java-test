@@ -1,7 +1,7 @@
 pipeline {
-    agent any /*{
+    agent {
         docker { image 'openjdk:8-jdk-alpine'}
-    }*/ //{ dockerfile true }
+    } //{ dockerfile true }
    
         
     tools{
@@ -26,7 +26,8 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'mvn -Dmaven.test.failure.ignore=true clean install' 
+                //sh 'mvn -Dmaven.test.failure.ignore=true clean install' 
+                sh 'mvn -B'
                 sh 'ls -l ./target'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
                 echo ' testing build success. '
