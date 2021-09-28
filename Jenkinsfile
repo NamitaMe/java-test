@@ -1,5 +1,7 @@
 pipeline {
-    agent any //{ dockerfile true }
+    agent{
+        docker{ image 'openjdk:8-jdk-alpine'}
+    }//{ dockerfile true }
    
         
     tools{
