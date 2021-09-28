@@ -43,7 +43,7 @@ pipeline {
             }
         }
     }
-    /*post {
+    post {
         always {
             echo 'One way or another, I have finished'
             //deleteDir()
@@ -60,5 +60,5 @@ pipeline {
         changed {
             echo 'Things were different before...'
         }
-    }*/
+    }
 }
