@@ -15,8 +15,9 @@ pipeline {
     }
     stages {
         stage ('Initialize') {
-            echo ' testing success.******* '
+           
             steps {
+                 echo ' testing success.******* '
                 sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
