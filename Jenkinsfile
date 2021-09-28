@@ -7,7 +7,7 @@ pipeline {
         
         maven 'maven.3.8.2' 
         jdk 'jdk.9.0.4' 
-        echo ' testing success.******* '
+        
     }
     
     environment {
@@ -15,6 +15,7 @@ pipeline {
     }
     stages {
         stage ('Initialize') {
+            echo ' testing success.******* '
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
