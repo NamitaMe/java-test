@@ -26,8 +26,8 @@ pipeline {
         }
         stage('build') {
             steps {
-                //sh 'mvn -Dmaven.test.failure.ignore=true clean install' 
-                sh 'mvn -B'
+                sh 'mvn -Dmaven.test.failure.ignore=true clean install'
+       
                 sh 'ls -l ./target'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
                 echo ' testing build success. '
