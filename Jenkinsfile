@@ -1,9 +1,6 @@
 pipeline {
     agent any //{ dockerfile true }
-    options {
-        skipStagesAfterUnstable()
-    }
-    tools { 
+   
         
         maven 'maven.3.8.2' 
         jdk 'jdk.9.0.4' 
@@ -28,6 +25,7 @@ pipeline {
             steps {
                 sh 'mvn -Dmaven.test.failure.ignore=true clean install' 
                 sh 'ls -l ./target'
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
                 echo ' testing build success. '
             }
         }
