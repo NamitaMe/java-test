@@ -28,7 +28,7 @@ pipeline {
                 sh 'ls -l ./target'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
                 echo ' testing build success. '
-                echo ' Build Id :, ${BUILD_ID} '
+                echo ' Build Id :, ${env.BUILD_ID} '
             }
         }
         stage('Sanity check') {
