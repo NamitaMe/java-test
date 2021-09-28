@@ -1,8 +1,8 @@
 pipeline {
     agent any //{ dockerfile true }
-    /*options {
+    options {
         skipStagesAfterUnstable()
-    }*/
+    }
     tools { 
         
         maven 'maven.3.8.2' 
