@@ -4,8 +4,8 @@ pipeline {
         skipStagesAfterUnstable()
     }
     tools { 
-        maven 'Maven 3.8.1' 
-        jdk 'jdk8' 
+        maven 'Maven 3.5.4' 
+        jdk 'jdk 1.8.0_302' 
     }
     
     environment {
