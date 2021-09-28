@@ -1,6 +1,6 @@
 pipeline {
     agent{
-        docker{ image 'openjdk:9.0.4-jdk-alpine'}
+        docker{ image 'openjdk:8-jdk-alpine'}
     }//{ dockerfile true }
    
         
