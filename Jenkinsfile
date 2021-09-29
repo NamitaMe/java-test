@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'maven.3.8.2'}
+        docker { image 'maven:3.8.2'}
     } //{ dockerfile true }
    
         
