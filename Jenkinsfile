@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'openjdk:8-jdk-alpine'}
+        docker { image 'maven.3.8.2'}
     } //{ dockerfile true }
    
         
