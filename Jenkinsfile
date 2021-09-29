@@ -1,5 +1,5 @@
 pipeline {
-    agent {
+    /*agent {
         docker { image 'maven:3.8.2'}
     } //{ dockerfile true }
    
@@ -72,6 +72,18 @@ pipeline {
         }
         changed {
             echo 'Things were different before...'
+        }
+    }*/
+    
+    agent {
+        docker { image 'maven:3.3.3' }
+    }
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn --version'
+                sh 'mvn clean install'
+            }
         }
     }
 }
