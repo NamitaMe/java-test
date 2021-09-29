@@ -1,5 +1,5 @@
 pipeline {
-    /*agent {
+    /* agent {
         docker { image 'maven:3.8.2'}
     } //{ dockerfile true }
    
@@ -10,9 +10,7 @@ pipeline {
         
     }
     
-    /*environment {
-      DOCKER_CERT_PATH = credentials('docker_id')
-    }*/
+    
     stages {
         stage ('Initialize') {
            
