@@ -4,7 +4,7 @@ pipeline {
         docker { image 'maven:3.3.3' }
     }
     stages {
-        stage('build') {
+        stage('mvn-build') {
             steps {
                 sh 'mvn --version'
                 sh 'mvn clean install'
