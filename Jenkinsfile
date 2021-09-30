@@ -1,4 +1,4 @@
-def dockerRun ='docker run -p 8080:8080 -d -name java-test namiducker/java-test:2.0.0 .'
+def dockerRun ='docker run -p 8080:8080 -d --name java-test namiducker/java-test:2.0.0 .'
 pipeline {
     
     agent any //{
