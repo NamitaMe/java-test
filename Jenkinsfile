@@ -6,11 +6,11 @@ pipeline {
     stages {
         stage('mvn-build') {
             agent {
-        docker { image 'maven:3.3.3' }
-    }
+            docker { image 'maven:3.3.3' }
+        }
             steps {
                 sh 'mvn --version'
-                sh 'mvn clean install'
+                //sh 'mvn clean install'
                 
             }
         }
