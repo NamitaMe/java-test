@@ -26,7 +26,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'duckerhub-pwd', variable: 'dockerhubP')]) {
                     sh "docker login -u namiducker -p ${dockerhubP}"
                 }
-                sh 'docker push -t namiducker/java-test:2.0.0'
+                sh 'docker push namiducker/java-test:2.0.0'
             }
             
         }
