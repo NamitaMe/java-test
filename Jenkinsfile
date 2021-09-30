@@ -14,11 +14,11 @@ pipeline {
                 
             }
         }
-        /*stage ('Build Docker Image'){
+        stage ('Build Docker Image'){
             steps {
                 sh ' docker build -t namiducker/java-test:2.0.0 .'
             }
             
-        }*/
+        }
     }
 }
