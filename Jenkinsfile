@@ -1,8 +1,8 @@
 pipeline {
     
-    agent {
-        dockerfile true
-    }
+    agent any //{
+        //dockerfile true
+    //}
     stages {
         stage('mvn-build') {
             //agent {
