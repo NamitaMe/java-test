@@ -9,7 +9,7 @@ pipeline {
             //docker { image 'maven:3.3.3' }
         //}
             steps {
-                //sh 'mvn --version'
+                echo 'builng '
                 //sh 'mvn clean install'
                 
             }
