@@ -10,7 +10,7 @@ pipeline {
             //docker { image 'maven:3.3.3' }
         //}
             steps {
-                echo 'builng '
+                
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Workspace is ${env.WORKSPACE} and build_url is ${env.BUILD_URL}"
                 //sh 'mvn clean install'
