@@ -1,7 +1,8 @@
-FROM openjdk:8-jdk-alpine
-ENV server.port=8081
+# Build stage
+FROM maven:3.3.3 #-jdk:8-jdk-alpine AS build
+COPY src /home/app/src
+COPY pom.xml /home/app
+RUN mvn clean install
 
-ADD ./target/core-service-0.0.1-SNAPSHOT.jar app.jar 
-CMD ["java", "-jar","/app.jar"]
-CMD [mvn clean install]
+
 
