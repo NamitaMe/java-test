@@ -20,5 +20,14 @@ pipeline {
             }
             
         }
+        stage ('Push Docker Image'){
+            withCredentials([string(credentialsId: 'duckerhub-pwd', variable: 'dockerhubP')]) {
+                sh "docker login -u namiducker -p ${dockerhubP}"
+            }
+            steps {
+                sh 'docker push -t namiducker/java-test:2.0.0'
+            }
+            
+        }
     }
 }
