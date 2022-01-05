@@ -26,10 +26,12 @@ pipeline {
          stage ('Push Docker Image'){
             
             steps {
-                withCredentials([usernameColonPassword(credentialsId: 'duckerhub-cred', variable: 'dockerhub-pass')]) {
-                    sh "docker login -u namiducker -p ${dockerhub-pass}"
+                //withCredentials([usernameColonPassword(credentialsId: 'duckerhub-cred', variable: 'dockerhub-pass')]) {
+                    //sh "docker login -u namiducker -p ${dockerhub-pass}"
+                //}
+                docker.withRegistry('https://dockerhub.com', 'duckerhub-cred') {
+                 sh 'docker push namiducker/java-test:2.0.0'
                 }
-                sh 'docker push namiducker/java-test:2.0.0'
          }
 
 
