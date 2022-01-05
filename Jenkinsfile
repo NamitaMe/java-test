@@ -26,7 +26,7 @@ pipeline {
          stage ('Push Docker Image'){
             
             steps {
-                withCredentials((credentialsId: 'duckerhub-cred', variable: 'dockerhub-pass')) {
+                withCredentials([usernameColonPassword(credentialsId: 'duckerhub-cred', variable: 'dockerhub-pass')]) {
                     sh "docker login -u namiducker -p ${dockerhub-pass}"
                 }
                 sh 'docker push namiducker/java-test:2.0.0'
