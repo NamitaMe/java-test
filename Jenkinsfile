@@ -35,7 +35,7 @@ pipeline {
                 //}
                 //docker.withRegistry('https://hub.docker.com', 'duckerhub-cred') {
                  sh 'docker push namiducker/java-test:2.0.0'
-                }
+                //}
          }
 
 
