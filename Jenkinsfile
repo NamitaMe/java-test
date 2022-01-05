@@ -5,7 +5,7 @@ pipeline {
         //dockerfile true
     //}
     environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred')
+		DOCKERHUB_CREDENTIALS=credentials('duckerhub-cred')
 	}
     stages {
         stage('mvn-build') {
