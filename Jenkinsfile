@@ -4,6 +4,9 @@ pipeline {
     agent any //{
         //dockerfile true
     //}
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred')
+	}
     stages {
         stage('mvn-build') {
             //agent {
@@ -26,6 +29,7 @@ pipeline {
          stage ('Push Docker Image'){
             
             steps {
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 //withCredentials([usernameColonPassword(credentialsId: 'duckerhub-cred', variable: 'dockerhub-pass')]) {
                     //sh "docker login -u namiducker -p ${dockerhub-pass}"
                 //}
