@@ -33,16 +33,6 @@ pipeline {
             }
             
         }
-        stage ('Run container on dev server'){
-            steps {
-                
-                sshagent(['centosprivatekey']) {
-                   
-                    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.3.215 ${dockerRun}"
-                }
-                
-            }
-            
-        }
+        
     }
 }
