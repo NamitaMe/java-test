@@ -17,7 +17,7 @@ pipeline {
                 
             }
         }
-        stage ('Build Docker Image'){
+       // stage ('Build Docker Image'){
             steps {
                 sh 'docker build -t namiducker/java-test:2.0.0 .'
             }
@@ -30,7 +30,7 @@ pipeline {
                     sh "docker login -u namiducker -p ${dockerhubP}"
                 }
                 sh 'docker push namiducker/java-test:2.0.0'
-            }
+            //}
             
         }
         
